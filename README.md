@@ -1,8 +1,8 @@
 <img src="banner.png"></img>
 
-# Next.js 13: Your Odyssey into Full Stack Mastery | PESU I/O Slot 16
+# Next.js 13: Your Odyssey into Full Stack Mastery
 
-### Welcome to the Next.js 13 Course repository for PESU I/O at PES University Electronic City Campus!
+### Welcome to the Next.js 13 Course repository for PESU I/O Slot 16 at PES University Electronic City Campus!
 This repository is a central hub for all the course-related materials, including assignment submissions, class content, and resources. Here, you will find relevant resources you would need to succeed in the course.
 
 ## Course Overview
