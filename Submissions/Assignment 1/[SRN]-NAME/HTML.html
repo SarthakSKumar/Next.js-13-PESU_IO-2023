@@ -14,6 +14,12 @@
         //alert('hello');
     </script>
 
-    <div id="value"></div>
+    <label for="place">City:</label>
+    <!-- Define a textbox to enter city name -->
+    <input id="place" type="text" size="20" name="place">
+    <button onclick="showWeatherOfGivenPlace()">Show</button>
+
+    <div id="value" style="background-color: yellow;"></div>
+    <div id="error" style="background-color: red;"></div>
 </body>
 </html>
