@@ -1,0 +1,42 @@
+/*external css which is imported to 'HTML' file to apply styles */
+
+#heading {
+    /* CSS styling for an h1 tag with the id='heading' */
+    text-align: center;
+    font-family: monospace ;
+    font-size: 67px;
+    color:blueviolet;
+    background-color: aqua;
+}
+
+#introduction {
+    /* CSS styling for a p tag with the id='introduction' */
+    font-size: 29px;
+    font-family: cursive;
+    padding: 40px
+}
+
+#label {
+    /* CSS styling for a label tag with the id='label' */
+    font-size: 23px;
+    font-family: cursive;
+    padding-left: 450px;
+}
+
+#value { 
+    /* CSS styling for a div tag with the id='value' */
+    text-align: left;
+    font-size: 23px;
+    font-family: 'Times New Roman';
+    color:darkgreen;
+    padding: 44px;
+}
+
+#error {
+    /* CSS styling for a div tag with the id='error' */
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Times New Roman';
+    color:crimson;
+    padding: 20px;
+}
