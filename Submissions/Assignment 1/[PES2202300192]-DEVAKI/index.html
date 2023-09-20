@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the webpage document -->
+    <title>WEATHER FORECAST</title>
+
+    <!-- importing css file into HTML document -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- importing javascript file into HTML document-->
+    <script src="java.js"></script>
+</head>
+<body>
+
+    <!-- Webpage title-->
+    <h1 id="heading">WEATHER FORECAST</h1>
+
+    <p id="introduction">
+        This webpage allows you to get the weather forecast of any place in the world from anywhere!
+        All you have to do is just type in the place that you want to check the climate of in the box shown below and press 'Show'.
+        It's as simple as that!
+    </p>
+
+    <label id="label" for="place">CITY:</label>
+
+    <!-- Define a textbox to enter city name -->
+    <input id="place" type="text" size="20" name="place">
+
+    <!-- Button to input city name to javascript file -->
+    <button onclick="showWeatherOfGivenPlace()">Show</button>
+
+    <!-- To diplay the forecast after calling for data from openweathermap -->
+    <div id="value" ></div>
+
+    <!-- To display any error that may occur while calling or after recieving data from the website -->
+    <div id="error" ></div>
+</body>
+</html>
