@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+        <link rel = "stylesheet" href = "./WeatherApp.css"> 
+        <!--meta name = "viewport" content="width=device-width, inital-scale=1.0"-->
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+        <title>Weather App 🌤</title>
+    </head>
+    <body>
+        <div>
+            <div class = "container">
+                <div class = "search">
+                <input type = "text" placeholder = "Enter City Name...">
+                <button><img src="./search.png" alt="Weather"></button>
+            </div>
+            <div class = "error">
+                <p style = "font-family: Century Gothic; font-weight: bold;">Invalid City Name</p>
+            </div>
+            <div class = "weather">
+                <img src = "./logo.png" class = "icon" alt = "">
+                <h1 class = "celsius" style = "font-family: Century Gothic;">°C</h1>
+                <h3 class = "city" style = "font-family: Century Gothic;">City</h3>
+                <h3 class = "climate" style = "font-family: Century Gothic;"> </h3>
+                <div class = "detail">
+                    <div class = "col">
+                        <img src = "./humid.png" alt = "">
+                        <div class = "humidity">
+                            <p class = "humidityP">%</p>
+                            <p>Humidity</p>
+                        </div>
+                    <div class = "col">
+                        <img src = "./wind.png" alt = "">
+                        <div class = "wind">
+                            <p class = "windS">km/hr</p>
+                            <p>Winds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const searchInput = document.querySelector('.search input');
+            const searchBtn = document.querySelector('.search button');
+            const image = document.querySelector('.icon');
+            async function getWeather(city){
+                var res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b8f47ce95300a53e577c68b05c1f51dd&units=metric`);
+                if(res.status == 404){
+                    document.querySelector('.error').style.display = "block";
+                }
+                else{
+                    document.querySelector('.error').style.display = "none";
+                }
+                var data = await res.json();
+                console.log(data);
+                document.querySelector('.celsius').innerHTML = Math.round(data.main.temp) + "°C";
+                document.querySelector('.city').innerHTML = data.name;
+                document.querySelector('.humidityP').innerHTML = Math.round(data.main.humidity) + "%";
+                document.querySelector('.windS').innerHTML = Math.round(data.wind.speed) + "km/hr";
 
+                var climate = "";
+
+                if(data.weather[0].main == "Clouds"){
+                    image.src = "./clouds.png"
+                    climate = "Cloudy Skies"
+                }
+                else if(data.weather[0].main == "Clear"){
+                    image.src = "./clear.png"
+                    climate = "Clear Skies"
+                }
+                else if(data.weather[0].main == "Rain"){
+                    image.src = "./rain.png"
+                    climate = "Rain Showers"
+                }
+                else if(data.weather[0].main == "Drizzle"){
+                    image.src = "./drizzle.png"
+                    climate = "Light Shower"
+                }
+                else if(data.weather[0].main == "Fog"){
+                    image.src = "./mist.png"
+                    climate = "Fog"
+                }
+                else if(data.weather[0].main == "Haze"){
+                    image.src = "./mist.png"
+                    climate = "Haze"
+                }
+                else if(data.weather[0].main == "Mist"){
+                    image.src = "./mist.png"
+                    climate = "Mist"
+                }
+                else if(data.weather[0].main == "Snow"){
+                    image.src = "./snow.png"
+                    climate = "Frosty"
+                }
+                else if(data.weather[0].main == "Thunderstorm"){
+                    image.src = "./thunder.png"
+                    climate = "Thunderstorms"
+                }
+                else if(data.weather[0].main == "Tornado"){
+                    image.src = "./tornado.png"
+                    climate = "Tornado"
+                }
+                else if(data.weather[0].main == "Squall"){
+                    image.src = "./snow.png"
+                    climate = "Squall"
+                }
+                else if(data.weather[0].main == "Ash"){
+                    image.src = "./ash.png"
+                    climate = "Volcano Ash"
+                }
+                else if(data.weather[0].main == "Dust"){
+                    image.src = "./dust.png"
+                    climate = "Dust"
+                }
+                else if(data.weather[0].main == "Sand"){
+                    image.src = "./sand.png"
+                    climate = "Sandstorms"
+                }
+                else if(data.weather[0].main == "Smoke"){
+                    image.src = "./smoke.png"
+                    climate = "Smoke"
+                }
+            document.querySelector('.climate').innerHTML = climate;
+            }
+            searchBtn.addEventListener('click',() => {
+                getWeather(searchInput.value);
+            })
+        </script>
+    </body>
+</html>
