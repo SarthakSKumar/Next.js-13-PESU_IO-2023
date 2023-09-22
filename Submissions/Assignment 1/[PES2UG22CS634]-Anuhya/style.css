@@ -1,0 +1,82 @@
+body 
+{
+    background-image: url('file:///Users/anuhya/Downloads/cloud.jpeg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container 
+{
+    width: 1000px;
+    padding: 150px;
+    background-color: rgba(0,0,0,0); 
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 
+{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff; 
+}
+
+.input-container 
+{
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="text"] 
+{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #3498db; 
+    border-radius: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button 
+{
+    background-color: #3498db; 
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right:auto;
+}
+
+.weather-info h2 
+{
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff; 
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.weathercontainer {
+    text-align: center; 
+    background-color: #f2f2f2; 
+    padding: 5px; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.weather-info h3 
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #3498db; 
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.weather-info p 
+{
+    margin: 10px 0;
+}
