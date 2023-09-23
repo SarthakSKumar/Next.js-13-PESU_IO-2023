@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.search {
+    margin-bottom: 20px;
+    background-color: #007BFF;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: red;
+    border: none;
+    cursor: pointer;
+}
+
+.weather-info {
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p {
+    margin: 5px 0;
+}
