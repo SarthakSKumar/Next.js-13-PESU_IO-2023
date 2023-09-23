@@ -1,0 +1,12 @@
+<%- include('header') %>
+
+<div class="container">
+<h1>Thank you for subscribing</h1>
+<h2><%= city %> Weather</h2>
+<p>There is <strong><%= desc %></strong> with temperature of <strong><%= temp %></strong> °C</p>
+<p>Humidity is <strong><%= humidity %>%</strong> and Pressure is <strong><%= pressure %> Pa</strong></p>
+<div class="img">
+<img src="http://openweathermap.org/img/wn/<%= icon %>@2x.png">
+</div>
+<footer>Sign up again to check weather of another city!!</footer>
+<%- include('footer') %>
