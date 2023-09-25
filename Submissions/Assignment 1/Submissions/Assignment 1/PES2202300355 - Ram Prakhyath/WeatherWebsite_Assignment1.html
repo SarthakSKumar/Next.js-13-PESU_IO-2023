@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+    <title>Weather Today</title>
+    <head>
+        <style>
+            body {
+                background-image:url(weather_bg.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+
+            header {
+                display: flex;
+                background-color: black;
+                color: white;
+                font-size: 28px;
+                padding: 20px;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                border-radius: 0 0 90px 90px;
+            }
+            .container2{
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                text-align: center; 
+                max-width: auto;
+                margin-top: 10px;
+                padding: 50px;
+                background-color: white;
+                border-radius: 100px 100px 100px 100px;
+                margin-left: 200px;
+                margin-right: 200px;
+                border-style: groove;
+                box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+                font-size: 20px;
+
+            }
+
+            .container1{
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                text-align: center; 
+                max-width: 100%;
+                margin-top: 20px;
+                padding: 20px;
+                background-color: white;
+                border-radius: 100px 100px 100px 100px;
+                margin-left: 200px;
+                margin-right: 200px;
+                border-style: groove;
+                box-shadow: 0 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: center;
+            }
+
+            h2 {
+                background-color: black;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 24px;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+
+            h3 {
+                background-color: black;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                padding: 10px;
+                margin-left: 350px;
+                border-radius: 5px;
+            }
+            label {
+                font-size: 24px;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"] {
+                font-size: 18px;
+                width: 95%;
+                padding: 10px;
+                border: 1px solid grey;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+
+
+            button {
+                font-size: 24px;
+                display: block;
+                padding: auto;
+                margin-left: 75px;
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            #weather-info {
+                text-align: center;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Weather Today</h1>
+            <h3>A simple app to check for Maximum temperature, Minimum Temperature, and sky condition of a city.</h3>
+        </header>
+        <div class="container2">
+            <div id="weather-info">Weather Data will appear here.</div>
+        </div>
+        <div class="container1">
+            <div>
+                <label for="cityname">City Name</label>
+                <input id="cityname" type="text" name="name" required />
+                <button id="submitcityname">Search</button>
+            </div>
+        </div>
+
+        <script>
+            const apiKey = 'c918cae1b4fe7dbee538e92dc94b5f11';
+            const cityInput = document.getElementById('cityname');
+            const weatherInfo = document.getElementById('weather-info');
+            //Extracting weather info using FetchAPI
+            const updateWeatherData = () => {
+                const cityName = cityInput.value;
+                const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+
+                fetch(apiUrl)
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        let CityName = data.name;
+                        let Country = data.sys.country;
+                        let maxtemp = (data.main.temp_max - 273.15).toFixed(2);
+                        let mintemp = (data.main.temp_min - 273.15).toFixed(2);
+                        let feelslike = (data.main.feels_like - 273.15).toFixed(2);
+                        const weatherHTML = `<h2>Weather in ${CityName}, ${Country}</h2><p>Maximum Temperature: ${maxtemp}°C</p><p>Minimum Temperature: ${mintemp}°C</p><p>Feels Like: ${feelslike}°C</p><p>Weather: ${data.weather[0].description}</p>`;
+                        weatherInfo.innerHTML = weatherHTML;
+                    })
+                    .catch((error) => {
+                        console.error('Fetch error: ', error);
+                        weatherInfo.innerHTML = '<p>Error Fetching Weather Data. Refresh Page or type a valid city name.</p>';
+                    });
+            };
+            const button = document.getElementById('submitcityname');
+            button.addEventListener('click', updateWeatherData);
+        </script>
+    </body>
+
+</html>
