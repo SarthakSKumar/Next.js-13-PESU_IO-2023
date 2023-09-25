@@ -1,0 +1,69 @@
+body 
+{
+    color: #fff; 
+    background-image: url("C:\Users\Tanay\Downloads\io\gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg"); 
+     background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container 
+{
+    width: 1000px;
+    padding: 225px;
+    background-color: rgba(255, 255, 255, 0); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff; 
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #3498db; 
+    border-radius: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #3498db; 
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.weather-info {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #3498db; 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+}
+
+.weather-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #3498db; 
+}
+
+.weather-info p {
+    margin: 10px 0;
+}
