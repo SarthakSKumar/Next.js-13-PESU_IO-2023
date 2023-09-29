@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Weather Display Section -->
+
+<section id="weather-info">
+    <header>
+
+        <h1>Weather Report</h1>
+
+    </header>
+
+
+        <div class="input">
+            <input type="text" id="location" placeholder="Enter location" required>
+
+        <button id="search" type="submit" onclick="getWeather()">Search</button>
+        </div>
+
+   
+
+    
+
+    <div class="weather-field" id="image-icon">
+        <img id="cloud-image" src="./images/img3.png" alt="Cloud Image">
+
+    </div>
+    <div class="weather-field">
+
+        <h3>Location:</h3>
+
+        <p id="location-data">--</p>
+
+    </div>
+
+    <div class="weather-field">
+
+        <h3>Temperature:</h3>
+
+        <p id="temperature-data">--°C</p>
+
+    </div>
+
+    <div class="weather-field">
+
+        <h3>Pressure:</h3>
+
+        <p id="description-data">Partly Cloudy</p>
+
+    </div>
+
+    <div class="weather-field">
+
+        <h3>Humidity:</h3>
+
+        <p id="humidity-data">--%</p>
+
+    </div>
+
+    <div class="weather-field">
+
+        <h3>Clouds:</h3>
+
+        <p id="cloud-data">--</p>
+
+    </div>
+
+   
+
+    <!-- Add more fields and images as needed -->
+</section>
+   
+<script>
+
+function getWeather(){
+    event.preventDefault();
+    let city = document.getElementById("location").value;
+   
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3ac794bd07d68153d98bbe05f5123087`;
+    fetch(url).then(res => res.json()).then(data => {
+     document.getElementById("location-data").textContent = `${city},${data.sys.country}`;
+     document.getElementById("temperature-data").textContent = `${data.main.temp - 273.15} °C`;
+     document.getElementById("description-data").textContent = data.main.pressure;
+     document.getElementById("humidity-data").textContent = data.main.humidity;
+     document.getElementById("cloud-data").textContent = data.clouds.all;
+     let tempp = data.clouds.all;
+     console.log(tempp);
+     if(tempp<21){
+        let imagepath = './images/img3.png'
+       let sunny =  document.getElementById("cloud-image");
+       sunny.src = imagepath ;
+       sunny.alt = "sunny image";
+     }
+     else if(tempp>21 && tempp<50){
+        let imagepath = './images/img2.png'
+       let sunny =  document.getElementById("cloud-image");
+       sunny.src = imagepath ;
+       sunny.alt = "sunny image";
+     }
+     else{
+        let imagepath = './images/img1.png'
+       let sunny =  document.getElementById("cloud-image");
+       sunny.src = imagepath ;
+       sunny.alt = "sunny image";
+     }
+     
+    });
+
+}
+
+
+</script>
+
+</body>
+
+</html>
