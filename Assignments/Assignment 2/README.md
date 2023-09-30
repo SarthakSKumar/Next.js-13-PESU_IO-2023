@@ -3,7 +3,7 @@
 ### Objective
 The objective of this assignment is to create a web-based text analysis application using Node.js. You will build a server, implement file upload functionality, and display the results of text analysis on a webpage.
 ### Deadline
-The assignment is graded for **10 marks** and the deadline for submission is on **5th October 2023 11:59 pm**. Marks will be deducted for late submissions if any.
+The assignment is graded for **20 marks** and the deadline for submission is on **5th October 2023 11:59 pm**. Marks will be deducted for late submissions if any.
 
 ### Assignment Description
 
