@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWise</title>
+    <link rel="stylesheet" type="text/css" href="WeatherWise.css"/>
+
+</head>
+<body class="body">
+    <div class="header"><!--Creating the title bar showing website name-->
+    <p class="title"><img src="icons8-sun-48.png" alt="">WeatherWise</p></div>
+
+    <div class="cities"><p class="fc">Frequently searched cities:</p><!--Feature intended to give direct weather status on click of a button but did not work-->
+    <table>
+        <tr>
+            <td><a href="https://www.example.com">Bangalore</a></td>
+            <td><a href="https://www.example.com">Chennai</a></td>
+            <td><a href="https://www.example.com">Mumbai</a></td>
+            <td><a href="https://www.example.com">Delhi</a></td>
+            <td><a href="https://www.example.com">Paris</a></td>
+            <td><a href="https://www.example.com">Tokyo</a></td>
+            <td><a href="https://www.example.com">Sydney</a></td>
+            <td><a href="https://www.example.com">London</a></td>
+            <td><a href="https://www.example.com">New York</a></td>
+            <td><a href="https://www.example.com">LA</a></td>
+        </tr>
+    </table></div>
+
+
+    <div class="searchbox"><!--Search Box-->
+        
+        <img src="icons8-search-30.png" alt=""> 
+            </div>
+            <div class="mainbox"><!--Main Information box-->
+                <p id="current">Current Weather</p>
+                <input type="text" id="city" class="searchtext" placeholder="Enter a city">
+                <button id="getWeather">Get Weather</button>
+                <div id="weatherInfo"></div>
+            </div>
+            <script src="Weatherwise.js"></script>
+
+            <!--Initialising time fearture-->
+            <div id="time"><script src="Time.js"></script></div>
+            <div id="line"><b>______________________________________________________________________________________________________________________________</b></div>
+            
+            <p id="info">More Info:</p>
+
+            <div class="bottom"></div>
+</body>
+</html>

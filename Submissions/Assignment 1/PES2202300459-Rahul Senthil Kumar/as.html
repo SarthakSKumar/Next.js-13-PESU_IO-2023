@@ -1,0 +1,109 @@
+<html>
+<title>Weather Today</title>
+<head>
+    <style>
+        body{
+            background-image: url(sky.png);
+            background-size: cover;
+            
+        }
+    </style>
+
+    <style>
+    #textbox{
+        margin-left: 540px;
+        border-radius: 5px;
+        padding: 10px;
+        width: 350px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        text-align: center; 
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 100px 100px 100px 100px;
+        margin-left: 200px;
+        margin-right: 200px;
+        border-style: groove;
+        box-shadow: 0 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    #submitb{
+        border-radius: 5px;
+        width: 350px;
+        height: 40px;
+        margin-left: 540px;
+        background-color: rgb(224, 167, 176);
+        
+    }
+
+    #link{
+        font-size: 10px;
+    }
+    label{
+        margin-left:620px;
+        font-size: 30px;
+    }
+
+    </style>
+</head>
+<body>
+<br>
+<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 300%; text-align: center;font-weight:bolder; color: rgb(224, 167, 176); background-color: rgb(193, 211, 211);">Weather Today</h1>
+<br>
+<p style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight:bold ; font-size: 150%; color:rgb(90, 19, 29);"><i>Did you Know:</i> Cape Farewell in Greenland is the windiest place on the planet
+<a id="link" href="https://www.natgeokids.com/uk/discover/geography/physical-geography/30-freaky-facts-about-weather/">know more</a></p>
+<br>
+<br>
+<label style="text-align: center; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color:rgb(90, 19, 29) ">Enter your city</label>
+<br>
+<br>
+<input type="text" name="textbox" id="textbox" placeholder="Eg-Mumbai">
+<br>
+<br>
+<button style="font-weight: bold;" name="submitb" id="submitb">What's the weather like?</button>
+<br>
+<br>
+<div class="container">
+    <div id="weather-info">Weather information will be displayed here.</div>
+</div>
+<script>
+    const apiKey = '91b7a0443e0c8c01fcd58a389490a11f';
+    const cityInput = document.getElementById('textbox');
+    const weatherInfo = document.getElementById('weather-info');
+    
+    const WeatherData = () => { 
+        const cityName = cityInput.value;
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
+        fetch(apiUrl)
+        .then((response) => {
+            if(!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            let CityName = data.name;
+            let Country = data.sys.country;
+            let maxtemp = (data.main.temp_max - 273.15).toFixed(1);
+            let mintemp = (data.main.temp_min - 273.15).toFixed(1);
+            let feelslike = (data.main.feels_like - 273.15).toFixed(1);
+            const weatherHTML = `<h2>Weather in ${CityName}, ${Country}</h2><p>Max Temp: ${maxtemp}°C</p><p>Min Temp: ${mintemp}°C</p><p>Feels Like: ${feelslike}°C</p><p>Climate: ${data.weather[0].description}</p>`;
+            weatherInfo.innerHTML = weatherHTML;
+        })
+        .catch((error) => {
+            console.error('Fetch error:',error);
+            weatherInfo.innerHTML=`<p>An error occured. <br> Please Enter a valid city.</p>`
+        });
+    }
+    const button=document.getElementById('submitb');
+    button.addEventListener('click',WeatherData);
+</script>
+
+
+</body>
+
+</html>

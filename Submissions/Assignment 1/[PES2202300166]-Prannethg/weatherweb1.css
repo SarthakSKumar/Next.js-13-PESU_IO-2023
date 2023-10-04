@@ -1,0 +1,131 @@
+/* Add your styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 100px;
+    padding: 0;
+    background-color: rgb(22, 19, 19);
+    background: url('weather.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    background: linear-gradient(135deg,#a3a4a8,#ff5e00,#a3a4a8);
+    margin: 20px auto;
+    padding: 50px;
+    border-radius: 40px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.container:hover{
+    background: linear-gradient(135deg,#025bff,#ffe100);
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.weather-container {
+    text-align: center;
+}
+
+.search {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#city-input{
+    text-transform: capitalize;
+    background-color: rgb(253, 252, 252);
+    border-radius: 20px;
+}
+#city-input:hover{
+    background: url('earth.jpg') no-repeat;
+    background-size: cover;
+    color: #fff;
+    transition:background 0.2s ease-out ;
+}
+
+#search-btn {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+.fa-solid fa-magnifying-glass{
+    height: 20px;
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 70%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30%;
+    transition: background-color 0.1s ease-in;
+}
+
+button:hover {
+    background: url('weather.jpg')no-repeat;
+    background-size: cover;
+    
+}
+
+.weather-details {
+    margin-top: 20px;
+}
+
+#weather-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#temperature {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#description {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 900;
+}
+.weatherdetails {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.humidity {
+    display: flex;
+    align-items: center;
+}
+
+.wind {
+    display: flex;
+    align-items: center;
+}
+
+.weatherdetails i {
+    font-size: 30px;
+}
+.weatherdetails .text {
+    margin-left: 10px;
+
+}
