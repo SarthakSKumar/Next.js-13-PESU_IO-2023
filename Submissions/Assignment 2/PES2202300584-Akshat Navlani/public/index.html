@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Analysis App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload a Text File or Enter Text</h1>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt">
+        <textarea name="uploadedText" rows="5" cols="40" placeholder="Type or paste your text here"></textarea>
+        <button type="submit">Analyze</button>
+      </form>
+    </div>
+  </body>
+</html>
