@@ -1,7 +1,0 @@
-Label , Button
-
-
-tk.CTkLabel , tk.CTkButton
-
-
-tk.CTkLabel(window_name,text='',text_font='').place(x=0,y=0)/pack(side='')
