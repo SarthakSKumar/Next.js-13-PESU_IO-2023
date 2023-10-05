@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Text Analysis App</h1>
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="textFile" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="results" style="display: none;">
+        <h2>Analysis Results</h2>
+        <p id="wordCount">Word Count: 0</p>
+        <p id="readingTime">Reading Time: 0 minutes</p>    
+        <p id="tcCount">Total Characters: 0</p>
+        <p id="vowelCount">Vowel Count: 0</p>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
