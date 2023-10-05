@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web</title>
+    <link rel="stylesheet" href="weatherweb1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-container">
+            <div class="search">
+                <input type="text" class="searchbar" id="city-input" placeholder="Enter city name" spellcheck="false">
+                <button id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+            </div>
+            <div class="weather-info">
+                <h2 id="city-name"></h2>
+                <div class="weather-details">
+                    <img id="weather-icon" class="weather_img" src="clear.png" alt="Weather Icon">
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+                    <div class="weatherdetails">
+                        <div class="humidity">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div class="text">
+                                <span id="humidity"></span>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                        <div class="wind">
+                            <i class="fa-solid fa-wind"></i>
+                            <div class="text">
+                                <span id="windSpeed"></span>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="weatherweb1.js"></script>
+</body>
+</html>

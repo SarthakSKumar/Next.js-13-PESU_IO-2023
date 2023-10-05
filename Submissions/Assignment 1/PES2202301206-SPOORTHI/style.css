@@ -1,0 +1,137 @@
+/* Reset some default styles */
+
+body, h1, h2, h3, p {
+
+    margin: 0;
+   
+    padding:100;
+
+}
+
+#weather-info{
+    width: 400px;
+    height: auto;
+    margin: auto;
+    background: rgb(238,174,202);
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    border-radius: 10px;
+}
+
+/* Set a background color and text color for the body */
+
+body {
+
+    background-color: #f0f0f0;
+
+    font-family: Arial, sans-serif;
+
+    color: #333;
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+ 
+
+/* Style the header */
+
+header {
+
+    background-color: #3498db;
+
+    color: white;
+
+    padding: 10px;
+
+}
+
+ 
+
+/* Style the main section */
+
+section {
+
+    margin: 20px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+h3{
+    color: white;
+}
+ 
+
+/* Style the input field and button */
+
+input[type="text"] {
+
+    width: 200px;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+}
+.input{
+    margin-top: 20px;
+}
+ 
+
+button {
+
+    padding: 10px 20px;
+
+    background-color: #3498db;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+ 
+
+/* Style the weather information fields */
+
+.weather-field {
+
+    margin-top: 20px;
+
+}
+header{
+
+}
+
+ 
+
+.weather-field h3 {
+
+    font-weight: bold;
+
+}
+
+ 
+
+/* Style the weather icon */
+
+#cloud-image {
+
+    width: 100px;
+
+    height: auto;
+}
