@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
         wordCount,
         readingTime,
         vowelCount,
-        totalCharacters
+        totalCharacters,
       };
 
       // Send the analysis results as JSON

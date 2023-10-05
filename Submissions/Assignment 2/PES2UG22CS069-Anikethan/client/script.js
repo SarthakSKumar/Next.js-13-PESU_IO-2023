@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const resultsDiv = document.getElementById('results');
     const wordCountElement = document.getElementById('wordCount');
-    // const totalCharactersElement = document.getElementById('tcCount');
+    const totalCharactersElement = document.getElementById('tcCount');
     const readingTimeElement = document.getElementById('readingTime');
     const vowelCountElement = document.getElementById('vowelCount');
   
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayResults(results) {
         wordCountElement.textContent = `Word Count: ${results.wordCount}`;
         readingTimeElement.textContent = `Reading Time: ${results.readingTime} minutes`;
-        // totalCharactersElement.textContent = `total charecter Count: ${results.totalCharacters}`;
+        totalCharactersElement.textContent = `total charecter Count: ${results.totalCharacters}`;
         vowelCountElement.textContent =`vowel count: ${results.vowelCount}`;
 
         resultsDiv.style.display = 'block';
