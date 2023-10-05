@@ -1,0 +1,9 @@
+Words: Hello World
+Word Count: 2
+Reading Time: 0 minute(s)
+Vowel Count: 3
+Character Count: 11
+Word Frequency: 
+Hello: 1
+World: 1
+
