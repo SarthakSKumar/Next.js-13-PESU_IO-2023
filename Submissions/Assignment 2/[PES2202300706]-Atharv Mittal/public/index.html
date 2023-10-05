@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Analysis App</title>
+</head>
+<body>
+  <h1>Text Analysis App</h1>
+  <form id="uploadForm" action="/analyze" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".txt" required>
+    <button type="submit">Analyze</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const response = await fetch('/analyze', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+      displayResult(result);
+    });
+
+    function displayResult(result) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+        <p>Word Count: ${result.wordCount}</p>
+        <p>Reading Time: ${result.readingTime} minutes</p>
+        <p>Vowel Count: ${result.vowelCount}</p>
+        <p>Character Count: ${result.charCount}</p>
+        <h3>Word Frequency:</h3>
+        <ul>
+          ${Object.entries(result.wordFrequency).map(([word, count]) => `<li>${word}: ${count}</li>`).join('')}
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>
