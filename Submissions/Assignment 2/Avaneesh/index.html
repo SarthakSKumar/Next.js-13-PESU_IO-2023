@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis Web Application</title>
+    <link rel="stylesheet" href="./styles1.css">
+    <script src="./script1.js"></script>
+</head>
+
+    <body>
+        <div class="container">
+            <h1>Text File Upload and Analysis</h1>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" accept=".txt" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="analysisResults" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div id="resultsContent"></div>
+            </div>
+        </div>
+    
+</body>
+    
+        <body>
+    
+            <h1>Analysis Results:</h1>
+            <div id="results"></div>
+        
+            <script>
+                document.querySelector('form').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData();
+                    formData.append('textFile', document.querySelector('input[type="file"]').files[0]);
+        
+                    try {
+                        const response = await fetch('/analyze', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const data = await response.json();
+        
+                        const resultsDiv = document.getElementById('results');
+                        resultsDiv.innerHTML = `
+                            <p>Word Count: ${data.wordCount}</p>
+                            <p>Reading Time: ${data.readingTime} minute(s)</p>
+                            <p>Vowel Count: ${data.vowelCount}</p>
+                            <p>Character Count: ${data.charCount}</p>
+                            <h3>Word Frequency:</h3>
+                            <pre>${JSON.stringify(data.wordFrequency, null, 2)}</pre>
+                        `;
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            </script>
+    </body>
+</html>
