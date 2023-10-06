@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Text Analysis App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Analysis App</h1>
+        <input type="file" id="fileInput">
+        <button id="submitBtn">Submit</button>
+        <div id="results" class="hidden">
+            <h2>Analysis Results:</h2>
+            <p>Total Words: <span id="wordCount"></span></p>
+            <p>Reading Time: <span id="readingTime"></span> minutes</p>
+            <p>Total Vowels: <span id="vowelCount"></span></p>
+            <p>Total Characters: <span id="charCount"></span></p>
+            <h3>Word Frequency:</h3>
+            <ul id="wordFrequency"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
