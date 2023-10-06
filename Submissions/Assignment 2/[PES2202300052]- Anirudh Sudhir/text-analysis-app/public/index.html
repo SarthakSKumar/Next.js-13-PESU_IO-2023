@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Making website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Run JavaScript after HTML has been processed -->
+    <script src="./script.js" defer></script>
+    <title>Text Analysis App</title>
+    <!-- Importing a google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Text Analyzer</h1>
+      <p>Upload a text file for analysis</p>
+    </header>
+    <main>
+      <input type="file" id="fileInput" accept=".txt" />
+      <button id="submitButton">Submit</button>
+      <div id="results">
+        <!-- Div to display analysis results -->
+      </div>
+    </main>
+  </body>
+</html>
