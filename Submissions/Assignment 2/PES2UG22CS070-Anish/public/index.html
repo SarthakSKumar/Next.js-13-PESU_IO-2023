@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Text Analysis App</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <label for="file-input">Choose a .txt file:</label>
+        <input type="file" id="file-input" name="text-file" accept=".txt">
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+    <div id="results"></div>
+    <script src="client.js"></script>
+</body>
+</html>
