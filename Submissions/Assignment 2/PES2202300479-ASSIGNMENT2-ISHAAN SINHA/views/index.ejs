@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Analyzer</title>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+<h1>Text Analyzer App</h1>
+<form method="post" action="/analyze">
+    <textarea name="text" rows="4" cols="50"><%= text %></textarea>
+    <br>
+    <input type="submit" value="Submit Text">
+</form>
+
+<% if (analysis) { %>
+    <h2>Analysis Results</h2>
+    <p>Word Count: <%= analysis.wordCount %></p>
+    <p>Reading Time (minutes): <%= analysis.readingTime %></p>
+    <p>Vowel Count: <%= analysis.vowelCount %></p>
+    <p>Character Count: <%= analysis.characterCount %></p>
+    <h3>Word Frequencies:</h3>
+    <ul>
+    <% for (const word in analysis.wordFrequencies) { %>
+        <li><%= word %>: <%= analysis.wordFrequencies[word] %> times</li>
+    <% } %>
+    </ul>
+
+<% } %>
+</body>
+</html>
+
+
