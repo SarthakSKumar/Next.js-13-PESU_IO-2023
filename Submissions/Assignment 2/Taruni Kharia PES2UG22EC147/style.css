@@ -1,0 +1,74 @@
+
+body {
+    background-color: #f2f2f2; 
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    background-color: #2f93f6; 
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    background-image: url(./picture.jpeg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    padding: 200px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="submit"] {
+    background-color: #300b54; 
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #3b5233; 
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#results {
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(26, 92, 200, 0.1);
+    margin-top: 20px;
+}
+
+
+#results h3 {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: #982f9e;
+    margin-bottom: 10px;
+}
+
+#results p {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,108 @@
+body{
+    background-color: black;
+}
+
+.main{
+    color: aliceblue;
+    align-items: center;
+
+}
+
+.type{
+    color: orange;
+    font-size: 23px;
+    margin-left: 250px;
+}
+
+.links{
+    background-color: purple;
+    padding:20px;
+}
+
+.hello{
+    margin-left: 250px;
+    margin-top: 250px;
+    font-size: 35px;
+}
+
+.linkedin{
+    margin-left: 50px;
+    display: inline-block;
+    padding: 10px 20px; /* Adjust the padding as needed */
+    background-color: white; /* Button background color */
+    color: black;
+    font-weight:100px; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border: 1px solid white; /* Button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+.github{
+    margin-left: 50px;
+    display: inline-block;
+    padding: 10px 20px; /* Adjust the padding as needed */
+    background-color: white; /* Button background color */
+    color: black;
+    font-weight:100px; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border: 1px solid white; /* Button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+.aboutme{
+    margin-top: 300px;
+    padding-left: 100px;
+    background-color: purple;
+}
+
+
+.second img {
+    display: inline-block;
+    vertical-align: middle; /* Adjust vertical alignment as needed */
+  }
+  
+  .second p {
+    display: inline-block;
+    vertical-align: middle; /* Align text vertically with the image */
+    margin-left: 200px; /* Add spacing between image and text */
+  }
+  
+
+.pic{
+    width:200px;
+    border-radius: 200px;
+    }
+
+.para{
+    font-size: 23px;
+    align-items: center;
+    color: orange;
+}
+
+.learnmore{
+    background-color: purple;
+    padding-left: 100px;
+}
+
+.hhh{
+    color: orange;
+}
+
+.pup{
+    font-size: 22px;
+
+}
+
+.reach{
+    background-color: purple;
+    padding-left: 100px;
+}
+
+.mail{
+    color: orange;
+    font-size: 20px;
+}
+
+

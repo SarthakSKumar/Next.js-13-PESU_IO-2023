@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Analysis App</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: purple;
+    }
+
+    h2 {
+      color: orange;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      background-color: purple;
+      color: white;
+      border: none;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: orange;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff6600; /* Slightly darker orange on hover */
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Analysis App</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="textFile">
+    <input type="submit" value="Submit">
+  </form>
+  <h2>Analysis Results:</h2>
+  <div id="results"></div>
+
+  <script>
+    // ... Your JavaScript code here ...
+  </script>
+</body>
+</html>
+
